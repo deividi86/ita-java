@@ -3,7 +3,6 @@ package com.ita.week2;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
-import java.util.StringJoiner;
 
 /**
  * Created by deividi.silva on 04/03/2016.
@@ -42,6 +41,5 @@ public class Main {
 
         System.out.println("Cart total= "+ sc.pizzaTotal());
         System.out.println("Ingredients used= "+ allIngredients.toString());
-
     }
 }

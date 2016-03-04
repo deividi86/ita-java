@@ -36,6 +36,4 @@ public class Pizza {
 			totalIngredients.put(ingredient,1);
 		}
 	}
-
-
 }
