@@ -1,5 +1,6 @@
 package com.ita.week2;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -7,10 +8,12 @@ import java.util.List;
  */
 public class ShoppingCart {
 
-    public static List<Pizza> pizzas;
+    public static List<Pizza> pizzas = new ArrayList<>();
 
-    public ShoppingCart(List<Pizza> pizzas){
-        this.pizzas = pizzas;
+    public void addToCart(Pizza pizza){
+        if(!pizza.ingredients.isEmpty()){
+            this.pizzas.add(pizza);
+        }
     }
 
     public static Integer pizzaTotal(){

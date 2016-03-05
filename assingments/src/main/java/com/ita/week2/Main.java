@@ -11,6 +11,7 @@ public class Main {
 
     public static void main(String[] args) {
         HashMap<String, Integer> allIngredients = new HashMap<>();
+
         Pizza p1 = new Pizza();
         p1.addIngredient("mussarela");
         p1.addIngredient("presunto");
@@ -28,28 +29,17 @@ public class Main {
         p3.addIngredient("champignon");
         p3.addIngredient("mussarela");
 
-        List<Pizza> pizzaList = new ArrayList<>();
-        pizzaList.add(p1);
-        pizzaList.add(p2);
-        pizzaList.add(p3);
-
         allIngredients.putAll(p1.totalIngredients);
         allIngredients.putAll(p2.totalIngredients);
         allIngredients.putAll(p3.totalIngredients);
 
-        ShoppingCart sc = createShoppingCart(pizzaList);
+        ShoppingCart sc = new ShoppingCart();
+        sc.addToCart(p1);
+        sc.addToCart(p2);
+        sc.addToCart(p3);
 
         System.out.println("Cart total= "+ sc.pizzaTotal());
         System.out.println("Ingredients used= "+ allIngredients.toString());
     }
 
-    private static ShoppingCart createShoppingCart(List<Pizza> pizzaList) {
-        for (Pizza p : pizzaList) {
-            if (p.ingredients.isEmpty()) {
-                pizzaList.remove(p);
-                break;
-            }
-        }
-        return new ShoppingCart(pizzaList);
-    }
 }
