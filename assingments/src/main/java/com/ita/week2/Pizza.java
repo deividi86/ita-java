@@ -10,7 +10,7 @@ import java.util.List;
 public class Pizza {
 
 	public static HashMap<String, Integer> totalIngredients = new HashMap<>();
-	private List<String> ingredients = new ArrayList<>();
+	public List<String> ingredients = new ArrayList<>();
 
 	public void addIngredient(String ingredient) {
 		this.ingredients.add(ingredient);
@@ -18,6 +18,9 @@ public class Pizza {
 	}
 
 	public Integer getPrice(){
+		if(ingredients.size() <= 0) {
+			return 0;
+		}
 		if(ingredients.size() <= 2) {
 			return 15;
 		}
