@@ -37,9 +37,19 @@ public class Main {
         allIngredients.putAll(p2.totalIngredients);
         allIngredients.putAll(p3.totalIngredients);
 
-        ShoppingCart sc = new ShoppingCart(pizzaList);
+        ShoppingCart sc = createShoppingCart(pizzaList);
 
         System.out.println("Cart total= "+ sc.pizzaTotal());
         System.out.println("Ingredients used= "+ allIngredients.toString());
+    }
+
+    private static ShoppingCart createShoppingCart(List<Pizza> pizzaList) {
+        for (Pizza p : pizzaList) {
+            if (p.ingredients.isEmpty()) {
+                pizzaList.remove(p);
+                break;
+            }
+        }
+        return new ShoppingCart(pizzaList);
     }
 }

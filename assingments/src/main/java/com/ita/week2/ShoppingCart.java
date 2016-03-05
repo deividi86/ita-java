@@ -7,7 +7,7 @@ import java.util.List;
  */
 public class ShoppingCart {
 
-    private static List<Pizza> pizzas;
+    public static List<Pizza> pizzas;
 
     public ShoppingCart(List<Pizza> pizzas){
         this.pizzas = pizzas;
@@ -15,8 +15,8 @@ public class ShoppingCart {
 
     public static Integer pizzaTotal(){
         Integer totalPrice = 0;
-        for(int i =0; i < pizzas.size(); i++){
-            totalPrice += pizzas.get(i).getPrice();
+        for(Pizza p : pizzas){
+            totalPrice += p.getPrice();
         }
         return totalPrice;
     }
