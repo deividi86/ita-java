@@ -10,8 +10,6 @@ import java.util.List;
 public class Main {
 
     public static void main(String[] args) {
-        HashMap<String, Integer> allIngredients = new HashMap<>();
-
         Pizza p1 = new Pizza();
         p1.addIngredient("mussarela");
         p1.addIngredient("presunto");
@@ -29,17 +27,13 @@ public class Main {
         p3.addIngredient("champignon");
         p3.addIngredient("mussarela");
 
-        allIngredients.putAll(p1.totalIngredients);
-        allIngredients.putAll(p2.totalIngredients);
-        allIngredients.putAll(p3.totalIngredients);
-
         ShoppingCart sc = new ShoppingCart();
         sc.addToCart(p1);
         sc.addToCart(p2);
         sc.addToCart(p3);
 
         System.out.println("Cart total= "+ sc.pizzaTotal());
-        System.out.println("Ingredients used= "+ allIngredients.toString());
+        System.out.println("Ingredients used= "+ Pizza.totalIngredients.toString());
     }
 
 }
