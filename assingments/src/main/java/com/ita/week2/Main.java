@@ -1,9 +1,5 @@
 package com.ita.week2;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-
 /**
  * Created by deividi.silva on 04/03/2016.
  */
