@@ -12,22 +12,21 @@ import static org.hamcrest.CoreMatchers.equalTo;
 public class ShoppingCartTest {
 
     private Pizza pizza = new Pizza();
+    private ShoppingCart cart = new ShoppingCart();
 
     @Before
     public void setup() {
         pizza.addIngredient("provolone");
+        cart.addToCart(pizza);
     }
 
     @Test
     public void testAddToCart() throws Exception {
-        ShoppingCart cart = new ShoppingCart();
-        cart.addToCart(pizza);
-
-        assertThat(1, equalTo(cart.pizzas.size()));
+        assertThat(2, equalTo(cart.pizzas.size()));
     }
 
     @Test
     public void testPizzaTotal() throws Exception {
-
+        assertThat(15, equalTo(cart.pizzaTotal()));
     }
 }
