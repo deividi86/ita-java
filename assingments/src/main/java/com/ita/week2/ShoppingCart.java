@@ -18,6 +18,7 @@ public class ShoppingCart {
 
     public static Integer pizzaTotal(){
         Integer totalPrice = 0;
+
         for(Pizza p : pizzas){
             totalPrice += p.getPrice();
         }
