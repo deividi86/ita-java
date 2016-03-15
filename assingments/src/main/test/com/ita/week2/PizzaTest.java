@@ -16,19 +16,68 @@ public class PizzaTest {
 
 	@Before
 	public void setup() {
-		p.addIngredient("calabresa");
+		p.resetIngredients();
+	}
+
+	@Test
+	public void testPriceWithNoIngredient() throws Exception {
+		assertThat(0, equalTo(p.getPrice()));
+	}
+
+	@Test
+	public void testPriceWithOneIngredient() throws Exception {
 		p.addIngredient("queijo");
-		p.addIngredient("tomate");
+		assertThat(15, equalTo(p.getPrice()));
+	}
+
+	@Test
+	public void testAddTwoIngredients() throws Exception {
+		p.addIngredient("queijo");
 		p.addIngredient("cebola");
+		assertThat(15, equalTo(p.getPrice()));
+	}
+
+	@Test
+	public void testAddThreeIngredients() throws Exception {
+		p.addIngredient("queijo");
+		p.addIngredient("cebola");
+		p.addIngredient("calabresa");
+		assertThat(20, equalTo(p.getPrice()));
+	}
+
+	@Test
+	public void testAddFourIngredients() throws Exception {
+		p.addIngredient("queijo");
+		p.addIngredient("cebola");
+		p.addIngredient("calabresa");
+		p.addIngredient("milho");
+		assertThat(20, equalTo(p.getPrice()));
+	}
+
+	@Test
+	public void testAddFiveIngredients() throws Exception {
+		p.addIngredient("queijo");
+		p.addIngredient("cebola");
+		p.addIngredient("calabresa");
+		p.addIngredient("milho");
+		p.addIngredient("manjericão");
+		assertThat(20, equalTo(p.getPrice()));
+	}
+
+	@Test
+	public void testAddSixIngredients() throws Exception {
+		p.addIngredient("queijo");
+		p.addIngredient("cebola");
+		p.addIngredient("calabresa");
+		p.addIngredient("milho");
+		p.addIngredient("manjericão");
+		p.addIngredient("tomate");
+		assertThat(23, equalTo(p.getPrice()));
 	}
 
 	@Test
 	public void testAddIngredient() throws Exception {
-		assertThat(4, equalTo(p.ingredients.size()));
-	}
-
-	@Test
-	public void testGetPrice() throws Exception {
-		assertThat(20, equalTo(p.getPrice()));
+		p.addIngredient("tomate");
+		assertThat(1, equalTo(p.ingredients.size()));
 	}
 }

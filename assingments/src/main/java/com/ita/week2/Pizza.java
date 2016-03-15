@@ -39,4 +39,8 @@ public class Pizza {
 			totalIngredients.put(ingredient,1);
 		}
 	}
+
+	public static void resetIngredients() {
+		totalIngredients.clear();
+	}
 }
