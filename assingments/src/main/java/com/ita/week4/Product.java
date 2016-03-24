@@ -1,32 +1,52 @@
 package com.ita.week4;
 
+import java.util.Objects;
+
 /**
  * Created by deividi.silva on 18/03/2016.
  */
-public class Product {
+public abstract class Product {
 
     private String name;
     private String code;
     private float price;
 
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getCode() {
+        return code;
+    }
+
+    public void setCode(String code) {
+        this.code = code;
+    }
+
+    public float getPrice() {
+        return price;
+    }
+
+    public void setPrice(float price) {
+        this.price = price;
+    }
+
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof Product)) return false;
-
+        if (this == o)
+            return true;
+        if (!(o instanceof Product))
+            return false;
         Product product = (Product) o;
-
-        if (Float.compare(product.price, price) != 0) return false;
-        if (name != null ? !name.equals(product.name) : product.name != null) return false;
-        return code != null ? code.equals(product.code) : product.code == null;
-
+        return Objects.equals(code, product.code);
     }
 
     @Override
     public int hashCode() {
-        int result = name != null ? name.hashCode() : 0;
-        result = 31 * result + (code != null ? code.hashCode() : 0);
-        result = 31 * result + (price != +0.0f ? Float.floatToIntBits(price) : 0);
-        return result;
+        return Objects.hash(code);
     }
 }
