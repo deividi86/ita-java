@@ -9,3 +9,12 @@ goose
 chicken
 goat
 mouse
+lamb
+chicken
+mouse
+frog
+donkey
+cat
+chameleon
+spider
+turtle
