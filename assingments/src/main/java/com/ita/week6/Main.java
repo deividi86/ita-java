@@ -10,14 +10,16 @@ public class Main {
     public static void main(String[] args) {
         int swValue;
 
-        System.out.println("============================");
-        System.out.println("|  PALAVRAS EMBARALHADAS   |");
-        System.out.println("============================");
-        System.out.println("| Modos de jogo:           |");
-        System.out.println("|        1. Morte Subita   |");
-        System.out.println("|        2. 3 tentativas   |");
-        System.out.println("|        3. Exit           |");
-        System.out.println("============================");
+        System.out.println("=========================================");
+        System.out.println("|         PALAVRAS EMBARALHADAS         |");
+        System.out.println("-----------------------------------------");
+        System.out.println("|      Nomes de animais em inglês       |");
+        System.out.println("-----------------------------------------");
+        System.out.println("|           Modos de jogo:              |");
+        System.out.println("|             1. Morte Súbita           |");
+        System.out.println("|             2. 3 tentativas           |");
+        System.out.println("|             3. Sair                   |");
+        System.out.println("=========================================");
 
         Scanner in = new Scanner(System.in);
         swValue = in.nextInt();
