@@ -1,5 +1,9 @@
 package com.ita.week6;
 
+import com.ita.week6.api.Shuffler;
+
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.Scanner;
 
 /**
@@ -9,6 +13,7 @@ public class Main {
 
     public static void main(String[] args) {
         int swValue;
+        String answer = getAnswer();
 
         System.out.println("=========================================");
         System.out.println("|         PALAVRAS EMBARALHADAS         |");
@@ -27,16 +32,26 @@ public class Main {
         switch (swValue) {
             case 1:
                 System.out.println("Morte Subita");
+                System.out.println(answer);
                 break;
             case 2:
                 System.out.println("3 tentativas");
                 break;
             case 3:
                 System.out.println("Tchau!");
-                break;
+                System.exit(1);
             default:
                 System.out.println("Opção inválida");
                 break;
+        }
+    }
+
+    private static String getAnswer() {
+        WordTrunk wordTrunk = new WordTrunk();
+        try {
+             return wordTrunk.readWord();
+        } catch (IOException e) {
+            return "Word not found!";
         }
     }
 }
