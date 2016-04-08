@@ -1,6 +1,8 @@
 package com.ita.week6;
 
 import com.ita.week6.api.Shuffler;
+import com.ita.week6.factory.GameEngineFactory;
+import com.ita.week6.factory.ShufflerFactory;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -14,6 +16,7 @@ public class Main {
     public static void main(String[] args) {
         int swValue;
         String answer = getAnswer();
+        GameEngineFactory gameEngineFactory = new GameEngineFactory();
 
         System.out.println("=========================================");
         System.out.println("|         PALAVRAS EMBARALHADAS         |");
@@ -32,7 +35,7 @@ public class Main {
         switch (swValue) {
             case 1:
                 System.out.println("Morte Subita");
-                System.out.println(answer);
+                gameEngineFactory.
                 break;
             case 2:
                 System.out.println("3 tentativas");

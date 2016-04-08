@@ -5,5 +5,5 @@ package com.ita.week6.api;
  */
 public interface GameEngine {
 
-    public abstract void game();
+    public abstract String game();
 }
