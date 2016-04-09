@@ -2,7 +2,7 @@ package com.ita.week6.factory;
 
 import com.ita.week6.api.Shuffler;
 import com.ita.week6.impl.shuffle.BackwardShuffle;
-import com.ita.week6.impl.shuffle.RandomShuflle;
+import com.ita.week6.impl.shuffle.RandomShuffle;
 
 import java.util.Random;
 
@@ -18,7 +18,7 @@ public class ShufflerFactory {
         if(n==1){
             return new BackwardShuffle();
         } else {
-            return new RandomShuflle();
+            return new RandomShuffle();
         }
 
     }

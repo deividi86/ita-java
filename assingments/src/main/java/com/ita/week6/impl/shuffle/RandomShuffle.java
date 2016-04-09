@@ -10,13 +10,13 @@ import java.util.List;
 /**
  * Created by User on 03/04/2016.
  */
-public class RandomShuflle implements Shuffler {
+public class RandomShuffle implements Shuffler {
 
     @Override
     public String shuffleWord(String word) {
         List<String> arrayFromWord = new ArrayList<>();
         arrayFromWord.add(word);
         Collections.shuffle(arrayFromWord);
-        return arrayFromWord.toString();
+        return arrayFromWord.get(0);
     }
 }
